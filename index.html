@@ -32,12 +32,12 @@ html list names = js style names (look at start function -> switch)
 </details>
   
 <a href="#" id="rnd" role="button" class="corner" onclick="shuffle()">🔀</a>
-<a href="#" id="test" role="button" class="corner" onclick="showModal()">ಠ_ಠ</a>
+<a href="#" id="test" role="button" class="corner" onclick="showModal(modal)">ಠ_ಠ</a>
 
 <dialog class="dialog" id="modal">
   <article id="modart">
     <header>
-      <a href="#" aria-label="Close" class="close"  onclick="hideModal()"></a>
+      <a href="#" aria-label="Close" class="close"  onclick="hideModal(modal)"></a>
       Link in playlist?
     </header>
       <input id="inpTxt" type="text" placeholder="Enter your link here" oninput="inArray()">

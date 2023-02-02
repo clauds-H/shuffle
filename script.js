@@ -19,11 +19,12 @@ const dropdown = document.getElementById('sel');
 let count = 0;
 var firstClick = true;
 var intervalID;
-
 var arr;
-
-////////////////////
-start('Rammstein');
+/////////default///////////
+var runningNoti = false;
+var rotationSpeed = 50;
+var currentStyle = 'Rammstein';
+start(currentStyle);
 ////////////////////
 
 //randomize the array
@@ -37,7 +38,7 @@ function shuffle(){
 //btn.addEventListener('click', go);
 function go(){
   if(firstClick == true){
-      intervalID = setInterval(cycleArray, 50);
+      intervalID = setInterval(cycleArray, rotationSpeed);
       btn.textContent = 'stop';
       btn.classList.add('contrast');
       firstClick = false;
@@ -63,7 +64,7 @@ function inArray() {
   }
 }
 
-
+//rotation
 function cycleArray() {
   let linkText = arr[count];
   moveText.textContent = linkText;
@@ -76,11 +77,11 @@ function cycleArray() {
 }
 
 //modal for link check
-function showModal(){
-  modal.setAttribute("open", "");
+function showModal(el){
+  el.setAttribute("open", "");
 }
-function hideModal(){
-  modal.removeAttribute("open", "");
+function hideModal(el){
+  el.removeAttribute("open", "");
 }
 
 ////Fischer-Yates algorithm
@@ -113,9 +114,10 @@ function start(style){
       arr = strChill.split(' ');
       break;
      default:
-        alert('error: selection switch');
-  }
-  //console.log(arr);
+        alert('error: selection switch');  
+    }
+    //console.log(arr);
+    currentStyle = style;
 }
 
 function getEventTarget(e) {
@@ -127,14 +129,19 @@ const ul = document.getElementById('drop');
 ul.onclick = function(event) {
     let target = getEventTarget(event);
     let inner = target.textContent; 
-    //put in startfunction
-    start(inner);
-    //set inner from ulText
-    ulText.textContent = inner;
-    //close dropdown
-    sel.removeAttribute('open');
-    //alert('flipped! ' + '(╯‵□′)╯︵┻━┻');
-    notification('flipped! ' + '(╯‵□′)╯︵┻━┻');
+    if(currentStyle !== inner){
+      //put in startfunction
+      start(inner);
+      //set inner from ulText
+      ulText.textContent = inner;
+      //close dropdown
+      hideModal(sel);
+      //alert('flipped! ' + '(╯‵□′)╯︵┻━┻');
+      notification('flipped! ' + '(╯‵□′)╯︵┻━┻');
+    }else{
+      notification('＼( °□° )／ there was no change');
+    }
+
 };
 
 
@@ -142,7 +149,7 @@ ul.onclick = function(event) {
 const notiWrap = document.getElementById('bottom'); //wrapper
 const noti = notiWrap.children[0]; //notification window
 function notification(str){
-//set text
+  //set text
   noti.textContent = str;
   //fade in
   fadeIn(notiWrap);
@@ -154,6 +161,7 @@ function notification(str){
 }
 
 function fadeIn(el){
+  runningNoti = true;
   let bottom = -15;
   let op = 0;
   let timer = setInterval(function(){
@@ -183,13 +191,12 @@ function fadeOut(el){
     op -= 0.1;
     
   }, 10);
+  runningNoti = false;
 }
 
 /*
 TODOs:
 BUG: fast stylechange -> empty field --> WARUM???? -> block button for 1s?
-? modal window function can illuminate a redundancy -> send el with it
-check @stylechange if there was a change -> maybe do not display current style in list
 adjust speed in rotation
 
 Q2: make it accessable for everybody
