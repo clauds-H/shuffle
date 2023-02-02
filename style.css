@@ -1,0 +1,79 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.bg{
+  display: flex;
+  height: 100%;
+  background: #00C9FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #92FE9D, #00C9FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#main{
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#moveText{
+  text-align: center;
+}
+#check{
+  height: 
+}
+.corner{
+  position: absolute;
+
+  background-color: #18232c;
+  color: grey;
+}
+#test{
+    top: 5px;
+  right: 5px;
+}
+#rnd{
+  top: 5px;
+  right: 100px;
+}
+.corner:hover{
+  color: white;
+}
+dialog{
+
+}
+#modart{
+  width: 100%;
+}
+input{
+  text-align: center;
+}
+#sel{
+  position: absolute;
+  top: 5px;
+  right: 190px;
+  width: 190px;
+}
+#bottom{
+  bottom: -15%;
+  right: 5px;
+  border-radius: 45px;
+  //visibility: hidden;
+  opacity: 0;
+
+}
+#notification{
+  margin: 0;
+  padding: 21px;
+  width: 350px;
+  text-align: center;
+}
+#ulText{
+  background-color: #18232c !important;
+}
+#ulText:focus{
+  background-color: #11191f !important;
+}
