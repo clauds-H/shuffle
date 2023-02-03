@@ -193,6 +193,12 @@ function fadeOut(el){
   runningNoti = false;
 }
 
+function openLink(){
+ // window.open(moveText.textContent,'newTab','height=400,width=600,,top=250,,scrollbars=yes,menubar=no');
+ window.open(moveText.textContent, "_blank");
+}
+
+
 //setup speed
 
 
