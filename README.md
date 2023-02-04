@@ -7,13 +7,13 @@ This is an app to select random tracks from the selected genre. Feel free to ada
 
 
 
-KNOWN BUGS:
+<b>KNOWN BUGS:</b>
 
 fast change in style = notification overload + empty array
 
 
 
-HOW TO USE:
+<b>HOW TO USE:</b>
 
 - put links to js
 
