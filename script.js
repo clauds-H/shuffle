@@ -59,7 +59,7 @@ function inArray() {
     //alert('(⌐■_■) yes.');
     notification('(⌐■_■) yes.');
     input.value = '';
-    hideModal();
+    hideModal(modal);
   }
 }
 
