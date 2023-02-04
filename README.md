@@ -1,9 +1,9 @@
 # shuffle
 from codepen
 
-DESCRIPTION:
+<b>DESCRIPTION</b>:
 
-This is an app to select random tracks from the selected genre. Feel free to adapt it to your style (⌐■_■) - for it
+This is an app to select random tracks from the selected genre. Feel free to adapt it to your style (⌐■_■)
 
 
 
