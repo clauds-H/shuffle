@@ -3,13 +3,13 @@ from codepen
 
 <b>DESCRIPTION</b>:
 
-This is an app to select random tracks from the selected genre. Feel free to adapt it to your style (⌐■_■)
+> This is an app to select random tracks from the selected genre. Feel free to adapt it to your style (⌐■_■)
 
 
 
 <b>KNOWN BUGS:</b>
 
-fast change in style = notification overload + empty array
+> fast change in style = notification overload + empty array
 
 
 
