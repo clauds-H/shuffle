@@ -5,7 +5,7 @@ const strElek = "https://youtu.be/YC7dTQkMS8M https://youtu.be/-Dcf-zR4wfk https
 
 const strTechno = "https://youtu.be/KLmjyMIFkjI https://youtu.be/KiG2TwSMP7A https://youtu.be/dYlDmL7nrac https://youtu.be/6AQSxaFkGCg https://youtu.be/_yEgFsVvXC4 https://youtu.be/aT-MnTRQGeI https://youtu.be/SqmgTPS9H3Q https://youtu.be/YhZ3hcuVb_s https://youtu.be/Mc0E0hHIECw https://youtu.be/F9aN_wqXPgA https://youtu.be/nweJ1FpTh2U https://youtu.be/VUP56eo850U";
 //https://youtu.be/e6vDSMlemPE
-const strChill = "https://youtu.be/T7mG_svMJPE https://youtu.be/jIzeGIGkC4k https://youtu.be/g1R39R6eMuo https://youtu.be/XeU59vIGh5g https://youtu.be/F1yb89JO1xg";
+const strChill = "https://youtu.be/T7mG_svMJPE https://youtu.be/jIzeGIGkC4k https://youtu.be/g1R39R6eMuo https://youtu.be/XeU59vIGh5g https://youtu.be/F1yb89JO1xg https://youtu.be/6XUGnzAZxQE";
 
 //wien oida
 //https://youtu.be/3Fz_UvJVEvg https://youtu.be/xJbK2UOcxdk https://youtu.be/F1yb89JO1xg
