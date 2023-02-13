@@ -152,25 +152,20 @@ ul.onclick = function(event) {
 
 //create notification div
 function createNoti(str){
-  //notification running?
-  if(runningNoti){
-    const notiWrap = document.getElementById('bottom')
-    fadeOut(notiWrap);
-    deleteNoti(notiWrap);
-  }
 
   //div wrapper
   let wrapper = document.createElement('div');
   wrapper.setAttribute('class', 'corner');
   wrapper.setAttribute('id', 'bottom');
   document.body.appendChild(wrapper);
+
   //article as child
   let block = document.createElement('article'); 
   block.setAttribute("id", "notification");
   block.textContent = str;
   wrapper.appendChild(block);
 
-  fadeIn(wrapper);
+  return wrapper;
 }
 
 function deleteNoti(el){
@@ -179,16 +174,22 @@ function deleteNoti(el){
 
 //notification window
 function notification(str){
-  createNoti(str);
+//idee: wrap den wrapper zum ansteuern?
 
-  /*
+  //notification running?
+  if(runningNoti){
+    fadeOut(document.getElementById('bottom'));
+  }
 
+  let wrapper = createNoti(str);
+  fadeIn(wrapper);
+  
   //fadeout
   setTimeout(function() {
-    fadeOut();
-    deleteNoti();
+    fadeOut(wrapper);
+    //deleteNoti(notiWrap);
     }, 2500);
-    */
+    
 }
 
 function fadeIn(el){
@@ -213,6 +214,7 @@ function fadeOut(el){
   let op = 1;
   let timer = setInterval(function(){
     if(bottom<=-15){
+      deleteNoti(el);
       clearInterval(timer);
     }
     el.style.bottom = bottom+'%';
