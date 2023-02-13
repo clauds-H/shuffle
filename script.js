@@ -149,9 +149,6 @@ ul.onclick = function(event) {
 };
 
 
-
-//const notiWrap = document.getElementById('bottom'); //wrapper
-
 //create notification div
 function createNoti(str){
 
@@ -177,7 +174,7 @@ function deleteNoti(el){
 //notification window
 function notification(str){
   
-  //notification running?
+  //aborts running notification
   if(runningNoti){
     fadeOut(document.getElementById('bottom'));
   }
@@ -188,7 +185,6 @@ function notification(str){
   //fadeout
   setTimeout(function() {
     fadeOut(wrapper);
-    //deleteNoti(notiWrap);
     }, 2500);
     
 }
