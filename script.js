@@ -5,7 +5,7 @@ const strElek = "https://youtu.be/YC7dTQkMS8M https://youtu.be/-Dcf-zR4wfk https
 
 const strTechno = "https://youtu.be/KLmjyMIFkjI https://youtu.be/KiG2TwSMP7A https://youtu.be/dYlDmL7nrac https://youtu.be/6AQSxaFkGCg https://youtu.be/_yEgFsVvXC4 https://youtu.be/aT-MnTRQGeI https://youtu.be/SqmgTPS9H3Q https://youtu.be/YhZ3hcuVb_s https://youtu.be/Mc0E0hHIECw https://youtu.be/F9aN_wqXPgA https://youtu.be/nweJ1FpTh2U https://youtu.be/VUP56eo850U";
 //https://youtu.be/e6vDSMlemPE
-const strChill = "https://youtu.be/T7mG_svMJPE https://youtu.be/jIzeGIGkC4k https://youtu.be/g1R39R6eMuo https://youtu.be/XeU59vIGh5g https://youtu.be/F1yb89JO1xg https://youtu.be/6XUGnzAZxQE";
+const strChill = "https://youtu.be/lwxdhDc6u8U https://youtu.be/T7mG_svMJPE https://youtu.be/jIzeGIGkC4k https://youtu.be/g1R39R6eMuo https://youtu.be/XeU59vIGh5g https://youtu.be/F1yb89JO1xg https://youtu.be/6XUGnzAZxQE";
 
 //wien oida
 //https://youtu.be/3Fz_UvJVEvg https://youtu.be/xJbK2UOcxdk https://youtu.be/F1yb89JO1xg
@@ -147,19 +147,48 @@ ul.onclick = function(event) {
 };
 
 
+
+//const notiWrap = document.getElementById('bottom'); //wrapper
+
+//create notification div
+function createNoti(str){
+  //notification running?
+  if(runningNoti){
+    const notiWrap = document.getElementById('bottom')
+    fadeOut(notiWrap);
+    deleteNoti(notiWrap);
+  }
+
+  //div wrapper
+  let wrapper = document.createElement('div');
+  wrapper.setAttribute('class', 'corner');
+  wrapper.setAttribute('id', 'bottom');
+  document.body.appendChild(wrapper);
+  //article as child
+  let block = document.createElement('article'); 
+  block.setAttribute("id", "notification");
+  block.textContent = str;
+  wrapper.appendChild(block);
+
+  fadeIn(wrapper);
+}
+
+function deleteNoti(el){
+  el.remove();
+}
+
 //notification window
-const notiWrap = document.getElementById('bottom'); //wrapper
-const noti = notiWrap.children[0]; //notification window
 function notification(str){
-  //set text
-  noti.textContent = str;
-  //fade in
-  fadeIn(notiWrap);
+  createNoti(str);
+
+  /*
+
   //fadeout
   setTimeout(function() {
-    fadeOut(notiWrap);
+    fadeOut();
+    deleteNoti();
     }, 2500);
-  
+    */
 }
 
 function fadeIn(el){
@@ -196,6 +225,9 @@ function fadeOut(el){
   runningNoti = false;
 }
 
+
+
+
 function openLink(){
  // window.open(moveText.textContent,'newTab','height=400,width=600,,top=250,,scrollbars=yes,menubar=no');
  window.open(moveText.textContent, "_blank");
@@ -207,6 +239,7 @@ function openLink(){
 
 /*
 TODOs:
+notifaction creating as article - delete after fadeout
 BUG: fast stylechange -> empty field --> WARUM???? -> block button for 1s?
 adjust speed in rotation
 
