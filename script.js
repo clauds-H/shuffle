@@ -176,8 +176,7 @@ function deleteNoti(el){
 
 //notification window
 function notification(str){
-//idee: wrap den wrapper zum ansteuern?
-
+  
   //notification running?
   if(runningNoti){
     fadeOut(document.getElementById('bottom'));
