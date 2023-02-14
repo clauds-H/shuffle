@@ -1,5 +1,5 @@
 //nur gute links 😛
-const strRam = "https://youtu.be/_sM2sKk4DPM https://youtu.be/bUXoDvioAuE https://youtu.be/-XlW-cyAdiw https://youtu.be/9jMl4kNMv8E https://youtu.be/EOnSh3QlpbQ https://youtu.be/6A8bV_IEgyI https://youtu.be/Pu1Iuq0G-gI https://youtu.be/rvwftBpqiiw https://youtu.be/VEG_T4UUc1I https://youtu.be/ITcj8mePex0 https://youtu.be/ZkW-K5RQdzo https://youtu.be/E3hh37KbY18 https://youtu.be/60ZFYYqIzIQ https://youtu.be/WXv31OmnKqQ https://youtu.be/bIPCVaLHZng https://youtu.be/H7dV9VhThi8 https://youtu.be/7Rd5ltFFQDI https://youtu.be/GyicH6u98GU https://youtu.be/iqfIfsYaQy8 https://youtu.be/QX3FNE6xbco https://youtu.be/2c6rn5Bccw4 https://youtu.be/rf9og-hBM1E https://youtu.be/upnNpEOcnJI https://youtu.be/_vVejzHNGUk https://youtu.be/LeEPvlARStw https://youtu.be/ZXjNjuLOi_k https://youtu.be/7opB3Fniyh4 https://youtu.be/Cp31A_iqoDw https://youtu.be/nwjap30mWR8 https://youtu.be/k-kpk4_olLQ https://youtu.be/70tvVuj4v5g https://youtu.be/lPabXy9fpaE https://youtu.be/kiw_VxQ2oXo https://youtu.be/6s0ql4Ja9T8";
+const strRam = "https://youtu.be/yh6lt1QgPQQ https://youtu.be/_sM2sKk4DPM https://youtu.be/bUXoDvioAuE https://youtu.be/-XlW-cyAdiw https://youtu.be/9jMl4kNMv8E https://youtu.be/EOnSh3QlpbQ https://youtu.be/6A8bV_IEgyI https://youtu.be/Pu1Iuq0G-gI https://youtu.be/rvwftBpqiiw https://youtu.be/VEG_T4UUc1I https://youtu.be/ITcj8mePex0 https://youtu.be/ZkW-K5RQdzo https://youtu.be/E3hh37KbY18 https://youtu.be/60ZFYYqIzIQ https://youtu.be/WXv31OmnKqQ https://youtu.be/bIPCVaLHZng https://youtu.be/H7dV9VhThi8 https://youtu.be/7Rd5ltFFQDI https://youtu.be/GyicH6u98GU https://youtu.be/iqfIfsYaQy8 https://youtu.be/QX3FNE6xbco https://youtu.be/2c6rn5Bccw4 https://youtu.be/rf9og-hBM1E https://youtu.be/upnNpEOcnJI https://youtu.be/_vVejzHNGUk https://youtu.be/LeEPvlARStw https://youtu.be/ZXjNjuLOi_k https://youtu.be/7opB3Fniyh4 https://youtu.be/Cp31A_iqoDw https://youtu.be/nwjap30mWR8 https://youtu.be/k-kpk4_olLQ https://youtu.be/70tvVuj4v5g https://youtu.be/lPabXy9fpaE https://youtu.be/kiw_VxQ2oXo https://youtu.be/6s0ql4Ja9T8";
 
 const strElek = "https://youtu.be/YC7dTQkMS8M https://youtu.be/-Dcf-zR4wfk https://youtu.be/sv7rYlMJRKY https://youtu.be/PdTi7_PO8UI https://youtu.be/e8Y_EdgzcIk https://youtu.be/DE4lae15QlY https://youtu.be/Vgxsb6QpUdE https://youtu.be/EguoF5NlHzc https://youtu.be/vkwHpGo-fRs https://youtu.be/tBOIkn4sdFo https://youtu.be/wpjQ_jsQ2OA https://youtu.be/5xWa-vzICP8 https://youtu.be/X3MW1UKBJCw https://youtu.be/OqrQYu37BMc https://youtu.be/jWLaHF69S5Y https://youtu.be/5yJdo9tiW_Y https://youtu.be/J8TeMSzWyAE https://youtu.be/9bubwD-K4Os https://youtu.be/ThlyG8PTlxo https://youtu.be/CRc6YGJYes8 https://youtu.be/IqZYGcKBamo https://youtu.be/5lY9dFWECyI https://youtu.be/6r7NCucfzLk";
 
@@ -57,7 +57,7 @@ function go(){
 }
 
 //if link already in playlist
-//input.addEventListener('input', inArray);
+//input.oninput = function(event){}
 function inArray() {
   let text = input.value;
   if(arr.includes(text)){
@@ -98,7 +98,6 @@ function fyShuffle() {
   return arr;
 }
 
-
 //startfunction
 //sets ready, clears array, fills array with style (lol)
 function start(style){
@@ -133,6 +132,7 @@ const ul = document.getElementById('drop');
 ul.onclick = function(event) {
     let target = getEventTarget(event);
     let inner = target.textContent; 
+
     if(currentStyle !== inner){
       //put in startfunction
       start(inner);
@@ -145,9 +145,11 @@ ul.onclick = function(event) {
     }else{
       notification('＼( °□° )／ there was no change');
     }
-
 };
 
+function deleteDiv(el){
+  el.remove();
+}
 
 //create notification div
 function createNoti(str){
@@ -167,18 +169,15 @@ function createNoti(str){
   return wrapper;
 }
 
-function deleteNoti(el){
-  el.remove();
-}
-
 //notification window
 function notification(str){
-  
+
   //aborts running notification
   if(runningNoti){
     fadeOut(document.getElementById('bottom'));
   }
 
+  //creates new notification div
   let wrapper = createNoti(str);
   fadeIn(wrapper);
   
@@ -211,7 +210,7 @@ function fadeOut(el){
   let op = 1;
   let timer = setInterval(function(){
     if(bottom<=-15){
-      deleteNoti(el);
+      deleteDiv(el);
       clearInterval(timer);
     }
     el.style.bottom = bottom+'%';
@@ -231,15 +230,15 @@ function openLink(){
 }
 
 
-//setup speed
-
+//setup speed - currently only available via console - geek shit
+function changeRotationSpeed(number){
+  rotationSpeed = number;
+}
 
 /*
 TODOs:
-aufräumen 🙄
 BUG: fast stylechange -> empty field --> WARUM???? -> block button for 1s?
-adjust speed in rotation
 
-Q2: make it accessable for everybody
+Q2: add btn/slider/whatever: adjust speed in rotation
 Q2: YT API for title preview? possible?
 */
