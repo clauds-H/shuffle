@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+
   <meta charset="UTF-8">
   <title>CodePen - shuffle ♪</title>
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
+
 <!--
 you can adapt this programm to your style by changing the links
 html list names = js style names (look at start function -> switch)
 -->
+
 <div class="bg">
+
+  <!-- main program -->
   <article id="main">
     <header>Shuffle</header>
     <p id="moveText" onclick="openLink()"><p>
@@ -33,7 +38,11 @@ html list names = js style names (look at start function -> switch)
   
 <a href="#" id="rnd" role="button" class="corner" onclick="shuffle()">🔀</a>
 <a href="#" id="test" role="button" class="corner" onclick="showModal(modal)">ಠ_ಠ</a>
+<form>
+  <input class="corner" type="text" id="speedcontrol" onfocusout="speedInputField()">
+</form>
 
+<!-- popup -->
 <dialog class="dialog" id="modal">
   <article id="modart">
     <header>
@@ -45,7 +54,8 @@ html list names = js style names (look at start function -> switch)
 </dialog>
 </div>
 
-<!-- 
+
+<!-- old code 
 <div class="corner" id="bottom">
  <article id="notification">Notification</article>
 </div>
