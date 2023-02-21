@@ -32,7 +32,8 @@ var arr;
 
 /////////default///////////
 var runningNoti = false;
-var rotationSpeed = 50;
+var rotationSpeed = speedControl.value;
+setupSpeedbar();
 var currentStyle = 'Rammstein';
 start(currentStyle);
 ///////////////////////////
@@ -236,24 +237,30 @@ function openLink(){
 function changeRotationSpeed(number){
   rotationSpeed = number;
 }
-function speedInputField(){
-  
-  
-}
-
 
 // das ist so scuffed xD
 //this is fucked up code - shame on me
+function setupSpeedbar(){
+  let speed = speedControl.value;
+  let translatedSpeed = 100-speed;
+  sliderCount.textContent = 'speed = ' + speed;
+  changeRotationSpeed(translatedSpeed);
+  //235 -> because it works and i hate css
+  let temp = 235-speed;
+  speedCount.style.top = temp+'px';
+}
+
 
 speedControl.addEventListener('input', function(){
-  let speed = speedControl.value;
-  sliderCount.textContent = speed;
-  changeRotationSpeed(speed);
-  //185 -> because it works and i hate css
-  let temp = 185-speed;
-  speedCount.style.top = temp+'px';
+  setupSpeedbar();
+  
 });
-
+speedControl.addEventListener('mouseover', function(){
+  sliderCount.style.display = 'block';
+});
+speedControl.addEventListener('mouseout', function(){
+  sliderCount.style.display = 'none';
+});
 
 /*
 TODOs:
@@ -261,6 +268,6 @@ add atooltip to inform ppl about focusout event
 adjust speed value -> translate for clueless users
 BUG: fast stylechange -> empty field --> WARUM???? -> block button for 1s?
 
-Q2: add input: adjust speed in rotation
+
 Q2: YT API for title preview? possible?
 */
