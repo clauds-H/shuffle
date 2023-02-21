@@ -20,7 +20,10 @@ const modal = document.getElementById('modal');
 const input = document.getElementById('inpTxt');
 const btn = document.getElementById('btn');
 const dropdown = document.getElementById('sel');
-const speedControl = document.getElementById('speedcontrol');
+const speedControl = document.getElementById('slider_input');
+const speedCount = document.getElementById('slider_count');
+const sliderCount = document.getElementById('slider_count');
+
 
 let count = 0;
 var firstClick = true;
@@ -234,9 +237,23 @@ function changeRotationSpeed(number){
   rotationSpeed = number;
 }
 function speedInputField(){
-  let speed = speedControl.value;
-  changeRotationSpeed(speed);
+  
+  
 }
+
+
+// das ist so scuffed xD
+//this is fucked up code - shame on me
+
+speedControl.addEventListener('input', function(){
+  let speed = speedControl.value;
+  sliderCount.textContent = speed;
+  changeRotationSpeed(speed);
+  //185 -> because it works and i hate css
+  let temp = 185-speed;
+  speedCount.style.top = temp+'px';
+});
+
 
 /*
 TODOs:

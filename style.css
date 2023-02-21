@@ -81,3 +81,23 @@ input{
   top: 75px;
   width: 80px;
 }
+.slider{
+
+
+}
+#slider_count{
+  position: absolute;
+  right: 75px;
+  top: 135px;
+  color: black;
+}
+#slider_input{
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  background: transparent;
+  right: -27px;
+  top: 100px;
+  transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+}

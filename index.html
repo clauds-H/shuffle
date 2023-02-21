@@ -39,7 +39,15 @@ html list names = js style names (look at start function -> switch)
 <a href="#" id="rnd" role="button" class="corner" onclick="shuffle()">🔀</a>
 <a href="#" id="test" role="button" class="corner" onclick="showModal(modal)">ಠ_ಠ</a>
 <form>
-  <input class="corner" type="text" id="speedcontrol" onfocusout="speedInputField()">
+  <!--
+    <input class="corner" type="text" id="speedcontrol" onfocusout="speedInputField()">
+  -->
+  <!-- Range slider -->
+  <div class="slider">
+    <div id="slider_count">50</div>
+    <input id="slider_input" type="range" min="5" max="100" value="50" name="range">
+  </div>
+  
 </form>
 
 <!-- popup -->
