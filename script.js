@@ -264,10 +264,7 @@ speedControl.addEventListener('mouseout', function(){
 
 /*
 TODOs:
-add atooltip to inform ppl about focusout event
-adjust speed value -> translate for clueless users
 BUG: fast stylechange -> empty field --> WARUM???? -> block button for 1s?
-
 
 Q2: YT API for title preview? possible?
 */
