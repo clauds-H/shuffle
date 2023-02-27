@@ -7,7 +7,7 @@ const strTechno = "https://youtu.be/xqMQz3vQ3R0 https://youtu.be/SjpEBWyG6_g htt
 //https://youtu.be/e6vDSMlemPE
 
 //ballacid-style
-const strChill = "https://youtu.be/jOmLWGqYL5M https://youtu.be/PdTi7_PO8UI https://youtu.be/DE4lae15QlY https://youtu.be/1H40oGCLEBM https://youtu.be/UYVaCCTmsz4 https://youtu.be/lwxdhDc6u8U https://youtu.be/T7mG_svMJPE https://youtu.be/jIzeGIGkC4k https://youtu.be/g1R39R6eMuo https://youtu.be/XeU59vIGh5g https://youtu.be/F1yb89JO1xg https://youtu.be/6XUGnzAZxQE";
+const strChill = "https://youtu.be/CQdF0ECEbfA https://youtu.be/jOmLWGqYL5M https://youtu.be/PdTi7_PO8UI https://youtu.be/DE4lae15QlY https://youtu.be/1H40oGCLEBM https://youtu.be/UYVaCCTmsz4 https://youtu.be/lwxdhDc6u8U https://youtu.be/T7mG_svMJPE https://youtu.be/jIzeGIGkC4k https://youtu.be/g1R39R6eMuo https://youtu.be/XeU59vIGh5g https://youtu.be/F1yb89JO1xg https://youtu.be/6XUGnzAZxQE";
 //https://youtu.be/3Fz_UvJVEvg https://youtu.be/xJbK2UOcxdk
 
 ///////////////////////////////////////
