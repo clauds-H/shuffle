@@ -20,7 +20,6 @@ const input = document.getElementById('inpTxt');
 const btn = document.getElementById('btn');
 const dropdown = document.getElementById('sel');
 const speedControl = document.getElementById('slider_input');
-//const speedCount = document.getElementById('slider_count'); //oh man
 const sliderCount = document.getElementById('slider_count'); //oh man
 
 
